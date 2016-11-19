@@ -1,0 +1,21 @@
+<% include partials/header %>
+<div class="chat_window">
+    <div class="top_menu">
+        <div class="buttons">
+            <div class="button close">
+            </div>
+            <div class="button minimize"></div>
+            <div class="button maximize"></div></div>
+            <div class="title">Chat <%if (user.uid == 1) { %> Juan <% } else { %> Maria <% } %></div>
+            <input type="hidden" id="userId" value="<%= user.uid %>">
+        </div>
+   
+        <ul class="messages">
+
+            <% for(var i=0; i < messages.length; i++) { %>
+               <li class="message appeared <% if(user.uid == messages[i].user_id) { %> right <% } { %> left <% } %>"><div class="text_wrapper"><div class="text"><%= messages[i].message %></div></div></li>
+            <% } %>
+        </ul>
+        <div class="bottom_wrapper clearfix"><div class="message_input_wrapper"><input class="message_input" placeholder="Type your message here <%= user.name %>..."  id="message" /></div><div class="send_message"><div class="icon"></div><div class="text send">Send</div></div></div></div><div class="message_template"><li class="message"><div class="text_wrapper"><div class="text"></div></div></li></div>
+
+<% include partials/footer %>

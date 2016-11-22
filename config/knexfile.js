@@ -3,7 +3,7 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'chatapp_dev'
+      database: 'postgres://postgres@localhost:5432/chatapp_dev'
     }
   }
 }
